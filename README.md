@@ -1,129 +1,121 @@
-# zacharybrown.github.io
+# Zachary Brown — personal site
 
-Single-page personal site. Static HTML, one stylesheet, ~40 lines of vanilla JS.
-No build step, no framework, no dependencies, no tracking.
+Single-page static site for the Recalc Finance Accelerator application. Plain HTML, one
+stylesheet, ~45 lines of vanilla JS. No build step, no dependencies, no tracking.
 
 ```
 index.html
 assets/
   css/style.css
   js/main.js
-  img/            ← your photos go here (empty for now)
-  docs/
-    zachary-brown-resume.pdf
-    project-alpha-deck.pdf   ← team contact page removed, see below
-COPY-DRAFT.md     ← editorial plan; delete before publishing
+  img/    soccer-keeper.jpg · desert.jpg   (headshot still missing)
+  docs/   zachary-brown-resume.pdf · project-alpha-deck.pdf
 ```
 
-## Preview it locally
+## Deadline
+
+Applications close **27 September 2026**. Priority review closed **20 September**.
+The website is a required deliverable, submitted alongside the résumé and a short written
+reflection on where AI helped. See `APPLICATION-REFLECTION.md` for a draft of that.
+
+## Preview it
 
 ```bash
-python3 -m http.server 8000
+python3 -m http.server 8000 -d "/Users/zachbrown/Desktop/Recalc Website"
 ```
 
-Then open <http://localhost:8000>. Opening `index.html` by double-clicking also works,
-but the local server matches how GitHub Pages will serve it.
+Then open <http://localhost:8000>.
 
 ---
 
-## Before this goes public
+## What Recalc actually scores
 
-Five things are unfinished, and each one is marked in the page with a **yellow dashed
-draft block** so it cannot ship by accident. Search `index.html` for `NEEDS ZACH`.
+From their own materials: **effort, clarity, curiosity, judgment, and authentic
+communication.** Not credential volume. Three consequences for this site:
+
+1. **The goalkeeper section is the most valuable thing on the page**, because it shows an
+   original investing idea rather than a list. Protect it.
+2. **Your résumé can read as someone who already has access.** Recalc exists partly for
+   students at schools without on-campus recruiting. Section 4 handles this by naming what
+   you are actually missing rather than listing what you have.
+3. **TCW Private Credit is one of their partner firms.** Two of your four seats are credit
+   seats. That is the most specific hook you have and it is in Section 4.
+
+Program facts used on the page, all from Recalc's published materials: Katie Fifer (Audax
+Group, Paxion Capital) and Suzanne Corley (J.P. Morgan) teach it; seven live Tuesday
+sessions from October to mid-December plus recruiting prep in late December and January;
+curriculum runs accounting fundamentals, business analysis, then LBO modeling; attendance,
+Slack engagement, and follow-through on introductions are mandatory; partner firms include
+Audax, Charlesbank, Integrum, Silversmith, Spectrum Equity, TCW Private Credit, and TSG
+Consumer Partners; the program is free.
+
+---
+
+## Still unfinished
+
+Each one renders as a yellow dashed block in the page, so none can ship by accident.
+Search `index.html` for `NEEDS ZACH`.
 
 | # | What's missing | Where |
 |---|---|---|
-| 1 | Jiu-jitsu: when you started, your gym, your belt, one loss that changed how you train | Section 2, block 01 |
-| 2 | Soccer: UPSL club, position, the All-Conference season, one good loss | Section 2, block 02 |
-| 3 | London: what you actually observed. Plus the Côte d'Azur context | Section 2, block 03 |
-| 4 | Recalc specifics from the members you spoke with | Section 4 |
-| 5 | Teammate sign-off on publishing the Project Alpha deck | Section 3 |
+| 1 | Goalkeeping: UPSL club, the All-Conference season, one goal you still think about | Section 2, block 01 |
+| 2 | Jiu-jitsu: when you started, gym, belt, one roll you lost | Section 2, block 02 |
+| 3 | **Where the desert photo is**, and the full-resolution original | Section 2, block 03 |
+| 4 | London: what you actually noticed | Section 2, block 03 |
+| 5 | One specific thing a Recalc member told you | Section 4 |
+| 6 | Teammate sign-off on publishing the deck | Section 3 |
+| 7 | A headshot | Hero |
+| 8 | Captions for both photos | Sections 2 |
 
-### On the deck
+The desert image is 360×480, which is all I received. It is displayed at 352px wide so it
+does not look soft. Send the original if you want it bigger.
 
-The linked copy is 48 pages, not 49. Page 2 of the original was the Palmetto Partners
-team page, carrying Gem Granofsky's, Ross Kantor's, and Lucas Vaca Narvaja's FSU emails
-and personal phone numbers. Publishing that would put three other people's contact
-details on the open internet, so it was removed. The table of contents page numbers are
-now off by one as a result.
-
-The deck is still team work. Get their okay, or delete the link in
-Section 3 of `index.html`.
-
-### On the résumé
-
-The linked résumé carries your phone number and personal email. That is your call to
-make, but a PDF on a public GitHub Pages site is crawlable and will be scraped. If you
-would rather not, delete the `contact__aux` paragraph at the bottom of `index.html`.
-
----
-
-## Adding photos
-
-Five slots are wired up. Each one is a `<div class="photo-slot">` with the exact
-replacement markup in an HTML comment directly above it.
-
-| Slot | File | Shape |
-|---|---|---|
-| Hero | `assets/img/headshot.jpg` | portrait, ~800×1000 |
-| Jiu-jitsu | `assets/img/jiujitsu.jpg` | landscape, ~1200×800 |
-| Soccer ×2 | `assets/img/soccer-1.jpg`, `soccer-2.jpg` | landscape, ~1200×800 |
-| London | `assets/img/london.jpg` | landscape, ~1200×800 |
-
-Replace the `<div>` with the `<img>` from the comment above it, and **write real alt
-text** describing what is in the photo. Keep each file under about 300KB so the page
-stays fast.
+If you have no headshot, say so and the desert photo moves to the hero.
 
 ---
 
 ## Facts on the page, and where they came from
 
-Everything factual is from your résumé or the Project Alpha deck, except three things
-you told me directly and which are **not** on your résumé:
+Everything factual comes from your résumé or the Project Alpha deck, except three things
+you told me directly that are **not** on your résumé: AP Scholar, UPSL semi-professional
+soccer, and eight weeks in FSU's London program.
 
-- AP Scholar
-- UPSL semi-professional soccer
-- Eight weeks in FSU's London program
+Left off deliberately: **LDR Partners** and the three orgs you named (Undergraduate
+Investment Group, International Business Association, Global Markets Group). None are on
+your résumé and I had no titles or dates. Send them and they go in.
 
-Deliberately left off, because they are not on your résumé and I had no titles or dates:
-**LDR Partners**, and the three orgs you named (Undergraduate Investment Group,
-International Business Association, Global Markets Group). Send roles and dates and
-they go in. The orgs that *are* on your résumé — Noles on Wall Street, Access
-Distributed, Roark Capital Wall Street Club, the IBA Academy — are already in Section 4.
+No graduation year appears anywhere, per your instruction.
 
-Employer names are set as text wordmarks rather than firm logos, since using a firm's
-logo without permission is its own question.
+Employer names are text wordmarks, not firm logos.
+
+### The deck
+
+The linked copy is 48 pages, not 49. Page 2 of the original was the Palmetto Partners team
+page carrying Gem Granofsky's, Ross Kantor's, and Lucas Vaca Narvaja's FSU emails and
+personal phone numbers. Verified that no contact data survives in the published file. The
+table of contents page numbers are now off by one.
+
+### The résumé
+
+The linked PDF carries your phone number and personal email, and a public GitHub Pages site
+is crawlable. Delete the `contact__aux` paragraph in `index.html` if you would rather not.
 
 ---
 
-## Deploying to GitHub Pages
+## Deploying
 
-Delete `COPY-DRAFT.md` first; it is an internal editorial document.
+`COPY-DRAFT.md` and `APPLICATION-REFLECTION.md` are internal and already gitignored.
 
 ```bash
-git init -b main
-git add -A
-git commit -m "Personal site"
+cd "/Users/zachbrown/Desktop/Recalc Website"
 gh repo create zacharybrown-site --public --source=. --push
-```
-
-Then turn Pages on:
-
-```bash
 gh api -X POST repos/:owner/zacharybrown-site/pages -f source[branch]=main -f source[path]=/
 ```
 
-It publishes at `https://<your-username>.github.io/zacharybrown-site/` within a minute or
-two. For a bare `https://<your-username>.github.io/`, name the repo
-`<your-username>.github.io` instead.
+Publishes at `https://<username>.github.io/zacharybrown-site/` in a minute or two. For a
+bare `https://<username>.github.io/`, name the repo `<username>.github.io` instead.
+`.nojekyll` is present so the files are served as-is.
 
-`.nojekyll` is present so GitHub serves the files as-is rather than running them
-through Jekyll.
-
-### A custom domain, if you want one
-
-Buy the domain, put it in a `CNAME` file at the repo root, then point DNS at GitHub:
-four `A` records for the apex (`185.199.108.153`, `.109.153`, `.110.153`, `.111.153`)
-or a `CNAME` to `<your-username>.github.io` for a `www` subdomain.
-
-No analytics are installed. Say the word if you want them.
+For a custom domain: buy it, add a `CNAME` file at the repo root, then point DNS at GitHub
+with four apex `A` records (`185.199.108.153`, `.109.153`, `.110.153`, `.111.153`) or a
+`CNAME` to `<username>.github.io` for a `www` subdomain.

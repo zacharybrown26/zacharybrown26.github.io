@@ -529,6 +529,91 @@ h3 {
 }
 .foot p { margin: 0; }
 
+/* ---------- real photographs ---------- */
+.shots img {
+  border-radius: 3px;
+  width: 100%;
+}
+/* Portrait shots are capped so they never upscale past their native size. */
+.shots--narrow { max-width: 22rem; }
+
+.needs-inline {
+  color: var(--draft-ink) !important;
+  background: var(--draft-bg);
+  border-left: 3px solid var(--draft-edge);
+  padding: .4rem .7rem;
+  border-radius: 2px;
+  display: inline-block;
+}
+
+.note-line {
+  font-size: .875rem;
+  color: var(--ink-mute);
+  border-left: 2px solid var(--rule);
+  padding-left: 1rem;
+}
+
+/* ---------- numbered "why Recalc" blocks ---------- */
+.numbered {
+  list-style: none;
+  counter-reset: why;
+  margin: 0 0 2rem;
+  padding: 0;
+}
+.numbered > li {
+  counter-increment: why;
+  padding-top: 1.6rem;
+  margin-top: 1.6rem;
+  border-top: 1px solid var(--rule);
+}
+.numbered > li:first-child { padding-top: 0; margin-top: 0; border-top: 0; }
+.numbered > li::before {
+  content: "0" counter(why);
+  display: block;
+  font-family: var(--serif);
+  font-size: 1.125rem;
+  color: var(--ink-mute);
+  margin-bottom: .3rem;
+  font-variant-numeric: tabular-nums;
+}
+.numbered h4 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 1.25rem;
+  line-height: 1.25;
+  color: var(--ink);
+  margin: 0 0 .5rem;
+}
+.numbered p { margin: 0; }
+
+/* ---------- the closing ask ---------- */
+.closer--ask {
+  border-top: 2px solid var(--accent);
+  margin-top: 2.5rem;
+}
+
+/* ---------- colophon ---------- */
+.colophon {
+  margin-top: var(--step);
+  padding-top: 2rem;
+  border-top: 1px solid var(--rule);
+  max-width: 34rem;
+}
+.colophon h3 {
+  font-family: var(--sans);
+  font-size: .75rem;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  margin-bottom: .85rem;
+}
+.colophon p {
+  font-size: .9375rem;
+  line-height: 1.65;
+  color: var(--ink-mute);
+  margin: 0;
+}
+
 /* ---------- motion ---------- */
 .reveal {
   opacity: 0;

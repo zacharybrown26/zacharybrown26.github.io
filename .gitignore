@@ -3,5 +3,6 @@
 .vscode/
 .claude/
 
-# Internal editorial plan — not part of the published site.
+# Internal working documents — not part of the published site.
 COPY-DRAFT.md
+APPLICATION-REFLECTION.md

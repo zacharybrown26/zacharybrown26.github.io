@@ -27,7 +27,7 @@
 
   if (!reduced && "IntersectionObserver" in window) {
     var targets = document.querySelectorAll(
-      ".item, .card, .closer, .logos, .brings, .needs--large"
+      ".item, .card, .closer, .logos, .brings, .needs--large, .numbered > li, .colophon"
     );
 
     var io = new IntersectionObserver(

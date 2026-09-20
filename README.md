@@ -60,17 +60,28 @@ Search `index.html` for `NEEDS ZACH`.
 |---|---|---|
 | 1 | Goalkeeping: UPSL club, the All-Conference season, one goal you still think about | Section 2, block 01 |
 | 2 | Jiu-jitsu: when you started, gym, belt, one roll you lost | Section 2, block 02 |
-| 3 | **Where the desert photo is**, and the full-resolution original | Section 2, block 03 |
-| 4 | London: what you actually noticed | Section 2, block 03 |
-| 5 | One specific thing a Recalc member told you | Section 4 |
-| 6 | Teammate sign-off on publishing the deck | Section 3 |
-| 7 | A headshot | Hero |
-| 8 | Captions for both photos | Sections 2 |
+| 3 | What Morocco and London actually changed for you | Section 2, block 03 |
+| 4 | One real sentence from your friend in the program | Section 4 |
+| 5 | Teammate sign-off on publishing the Project Alpha deck | Section 3 |
+| 6 | A clean PDF export of the **updated** Project Alpha deck | Section 3 |
+| 7 | A caption for the goalkeeper photo | Section 2, block 01 |
 
-The desert image is 360×480, which is all I received. It is displayed at 352px wide so it
-does not look soft. Send the original if you want it bigger.
+Photos are all in: headshot, goalkeeper, Sahara. The headshot is 360×450 and the Morocco
+shot 360×480, both displayed at roughly native size so neither looks soft. Send originals
+if you want them larger.
 
-If you have no headshot, say so and the desert photo moves to the hero.
+### The two decks you sent
+
+**`AlphaPalmetto_Deck_vF_updated.pptx`** could not be converted here; PowerPoint automation
+is blocked in this environment. The link on the site is still the **older** deck. To fix it:
+open the pptx, **delete slide 2** (the team contact page, which carries all four of your
+phone numbers and emails), then File › Save As › PDF and send it over.
+
+**`IRDM_vF.pdf` is not usable.** It is a single-page screen capture of the PowerPoint
+window, app toolbar and all, not a slide export. The 27-slide deck is in there but the file
+shows one slide surrounded by menus. Export it properly and it can be linked. Note that it
+is also team work: Matthew Kempinski, Mazen Sadat, Kaylee Quinter, Tyler Egolf, and you.
+The site now credits the Media & Telecom team rather than implying you did it alone.
 
 ---
 

@@ -113,6 +113,21 @@ is crawlable. Delete the `contact__aux` paragraph in `index.html` if you would r
 
 ---
 
+## Accessibility
+
+Verified rather than assumed:
+
+- **Colour contrast passes WCAG AA in both light and dark themes**, measured across every
+  distinct foreground/background/size combination on the page. The muted grey was darkened
+  from `#6b7c93` to `#5a6b80` to clear 4.5:1; the large section numerals are decorative and
+  `aria-hidden`, and use a separate `--ink-faint` token.
+- No horizontal scroll at 375px. No skipped heading levels. `lang` set.
+- All three images carry descriptive alt text.
+- Skip link is the first focusable element.
+- Scroll reveals are pure progressive enhancement: the class that hides content is added by
+  JavaScript, so if the script fails everything renders visible.
+- `prefers-reduced-motion` disables all transitions and smooth scrolling.
+
 ## Deploying
 
 `COPY-DRAFT.md` and `APPLICATION-REFLECTION.md` are internal and already gitignored.

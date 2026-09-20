@@ -58,11 +58,30 @@ Search `index.html` for `NEEDS ZACH`.
 
 | # | What's missing | Where |
 |---|---|---|
-| 1 | The All-Conference season, and whether the goalkeeper photo is Parkland or high school | Section 2, block 01 |
-| 2 | Anything specific that stuck from London or Morocco. Optional, but it would sharpen the section | Section 2, block 02 |
-| 3 | One real sentence from your friend in the program | Section 4 |
-| 4 | A clean PDF export of the **updated** Project Alpha deck, slide 2 deleted | Section 3 |
-| 5 | A real slide export of the Iridium deck | not linked yet |
+| 1 | Your friend's line about Recalc. Blank block left in place with instructions | Section 4 |
+| 2 | A clean PDF export of the **updated** Project Alpha deck, slide 2 deleted | Section 3 |
+| 3 | Anything specific that stuck from London or Morocco. Optional, not blocking | Section 2, block 02 |
+| 4 | Full-resolution Morocco photo. Optional | Section 2, block 02 |
+
+### The decks, resolved
+
+**The Iridium deck is linked.** The file on the Desktop was a one-page screen capture of the
+PowerPoint window, but `~/Downloads/IRDM_vF.pdf` is a proper 27-page slide export. That is
+what is published. It carries the five teammates' names on the cover and no emails or phone
+numbers, so it needed no redaction.
+
+**The Project Alpha link is still the older deck**, and that now matters. PowerPoint cannot
+be driven from this environment, so `AlphaPalmetto_Deck_vF_updated.pptx` could not be
+converted. Comparing the two decks slide by slide: 38 of 49 slides are identical, ten were
+revised, and one was removed. The revisions are real, so the old version should not ship.
+
+> **Before exporting the updated deck, fix slide 12.** In the old version it read
+> "III. Industry & Market Analysis". In the updated version the entire slide reads
+> **"Analysus"** — a misspelling, with the section number and title gone. "Analysis" is
+> spelled correctly on eleven other slides, so this is an editing accident on a section
+> divider, and it would be the first thing a reviewer noticed.
+
+Then: delete slide 2, the team contact page, and File › Save As › PDF.
 
 ### Decisions already made
 

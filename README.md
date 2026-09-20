@@ -58,13 +58,26 @@ Search `index.html` for `NEEDS ZACH`.
 
 | # | What's missing | Where |
 |---|---|---|
-| 1 | Goalkeeping: UPSL club, the All-Conference season, one goal you still think about | Section 2, block 01 |
-| 2 | Jiu-jitsu: when you started, gym, belt, one roll you lost | Section 2, block 02 |
-| 3 | What Morocco and London actually changed for you | Section 2, block 03 |
-| 4 | One real sentence from your friend in the program | Section 4 |
-| 5 | Teammate sign-off on publishing the Project Alpha deck | Section 3 |
-| 6 | A clean PDF export of the **updated** Project Alpha deck | Section 3 |
-| 7 | A caption for the goalkeeper photo | Section 2, block 01 |
+| 1 | The All-Conference season, and whether the goalkeeper photo is Parkland or high school | Section 2, block 01 |
+| 2 | Anything specific that stuck from London or Morocco. Optional, but it would sharpen the section | Section 2, block 02 |
+| 3 | One real sentence from your friend in the program | Section 4 |
+| 4 | A clean PDF export of the **updated** Project Alpha deck, slide 2 deleted | Section 3 |
+| 5 | A real slide export of the Iridium deck | not linked yet |
+
+### Decisions already made
+
+- **Jiu-jitsu section cut.** Two strong interest blocks beat three where one is visibly
+  thinner. Section 2 is now Goalkeeping and Living Somewhere Else, numbered 01 and 02, and
+  every "three interests" reference was updated to match.
+- **The deck is linked**, same as the reference site does with its own team decks. The
+  contact page is still stripped, so no one else's phone number is published. Giving Gem,
+  Ross, and Lucas a heads-up is a courtesy rather than a blocker.
+- **Two claims were cut rather than kept unverified**: that a shared set of short calls was
+  built, and that the team's shape measurably improved. Captaincy and the international
+  makeup of the squad are confirmed and stayed in.
+- **The London "vans" detail was cut** because it was mine, not observed. Section 2 block 02
+  now claims nothing about either trip except that Zach was there, and the analytical weight
+  sits on the documented Waterbrook screening work instead.
 
 Photos are all in: headshot, goalkeeper, Sahara. The headshot is 360×450 and the Morocco
 shot 360×480, both displayed at roughly native size so neither looks soft. Send originals

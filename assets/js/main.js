@@ -1,5 +1,12 @@
 /* Zachary Brown — site behaviour.
-   Deliberately small: no framework, no dependencies, no tracking. */
+
+   Deliberately tiny: no framework, no dependencies, no tracking.
+
+   Note that nothing here controls whether content is visible. The
+   scroll reveal lives entirely in CSS, on a view timeline, so that a
+   missed callback or a context that never fires scroll events cannot
+   leave part of the page blank. If this file fails to load, the site
+   loses a live copyright year and a fading header, and nothing else. */
 
 (function () {
   "use strict";
@@ -8,7 +15,9 @@
   var year = document.getElementById("year");
   if (year) year.textContent = String(new Date().getFullYear());
 
-  /* Sticky top bar fades in once the hero has scrolled past. */
+  /* Sticky top bar fades in once the hero has scrolled past. Purely
+     decorative: the bar is a convenience, not the only way to navigate,
+     and every section is reachable by scrolling. */
   var topbar = document.getElementById("topbar");
   var hero = document.getElementById("top");
 
@@ -19,31 +28,5 @@
       },
       { rootMargin: "-120px 0px 0px 0px" }
     ).observe(hero);
-  }
-
-  /* Gentle reveal on scroll. Skipped entirely when the visitor
-     has asked for reduced motion, and when IO is unavailable. */
-  var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-  if (!reduced && "IntersectionObserver" in window) {
-    var targets = document.querySelectorAll(
-      ".item, .card, .closer, .logos, .brings, .needs--large, .numbered > li, .colophon"
-    );
-
-    var io = new IntersectionObserver(
-      function (entries) {
-        entries.forEach(function (entry) {
-          if (!entry.isIntersecting) return;
-          entry.target.classList.add("is-in");
-          io.unobserve(entry.target);
-        });
-      },
-      { rootMargin: "0px 0px -8% 0px", threshold: 0.05 }
-    );
-
-    targets.forEach(function (el) {
-      el.classList.add("reveal");
-      io.observe(el);
-    });
   }
 })();

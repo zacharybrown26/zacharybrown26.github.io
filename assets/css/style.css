@@ -378,6 +378,9 @@ h3 {
 }
 .needs p { margin: 0 0 .7rem; }
 .needs p:last-child { margin-bottom: 0; }
+.needs ul { margin: 0 0 .7rem; padding-left: 1.15rem; }
+.needs li { margin-bottom: .35rem; }
+.needs li:last-child { margin-bottom: 0; }
 .needs strong { color: var(--draft-ink); }
 .needs__tag {
   font-size: .6875rem !important;
@@ -621,13 +624,47 @@ h3 {
   margin: 0;
 }
 
-/* ---------- motion ---------- */
-.reveal {
-  opacity: 0;
-  transform: translateY(14px);
-  transition: opacity .6s ease, transform .6s ease;
+/* ---------- motion ----------
+
+   The scroll reveal is CSS-only, driven by a view timeline rather than
+   by JavaScript.
+
+   This used to be an IntersectionObserver. It was replaced because the
+   observer's callbacks are coalesced during fast scrolling: drag the
+   scrollbar or hit End, and elements cross the viewport without ever
+   being announced, leaving them stuck at opacity 0 permanently. On a
+   job application page, a reviewer who scrolls quickly would have seen
+   blank sections. A scroll-listener fallback did not fix it either,
+   since some embedded contexts never fire scroll events at all.
+
+   A view timeline cannot miss, because it is position-based rather
+   than event-based: progress is a pure function of where the element
+   sits in the scrollport. And where it is unsupported, nothing is
+   hidden in the first place — the @supports guard means opacity is
+   never set to 0 unless the browser can animate it back.
+   ------------------------------------------------------------------ */
+
+@keyframes reveal-in {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: none; }
 }
-.reveal.is-in { opacity: 1; transform: none; }
+
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .item,
+    .card,
+    .closer,
+    .logos,
+    .brings,
+    .needs--large,
+    .numbered > li,
+    .colophon {
+      animation: reveal-in linear both;
+      animation-timeline: view();
+      animation-range: entry 5% entry 45%;
+    }
+  }
+}
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -635,7 +672,6 @@ h3 {
     animation-duration: .001ms !important;
     transition-duration: .001ms !important;
   }
-  .reveal { opacity: 1; transform: none; }
 }
 
 /* ---------- print ---------- */

@@ -124,9 +124,27 @@ Verified rather than assumed:
 - No horizontal scroll at 375px. No skipped heading levels. `lang` set.
 - All three images carry descriptive alt text.
 - Skip link is the first focusable element.
-- Scroll reveals are pure progressive enhancement: the class that hides content is added by
-  JavaScript, so if the script fails everything renders visible.
-- `prefers-reduced-motion` disables all transitions and smooth scrolling.
+- `prefers-reduced-motion` disables all animation and smooth scrolling.
+
+### The scroll reveal is CSS-only, on purpose
+
+It was an IntersectionObserver first, and that had a bug worth recording. Browsers coalesce
+observer callbacks during fast scrolling, so elements cross the viewport without ever being
+announced and stay at opacity 0 permanently. Dragging the scrollbar or pressing End left 12
+of 17 blocks invisible, including the whole Recalc section and the closing ask. On a job
+application, a reviewer who scrolls quickly would have seen blank pages.
+
+Adding a scroll-listener fallback did not fix it, because some embedded contexts never fire
+scroll events at all.
+
+It now runs on a CSS view timeline, which cannot miss: progress is a function of where the
+element sits in the scrollport, not of an event arriving. And the whole thing is wrapped in
+`@supports (animation-timeline: view())`, so a browser that cannot animate it never hides
+the content in the first place. **No JavaScript controls visibility anywhere on this site.**
+If `main.js` fails to load you lose a live copyright year and a fading header, nothing more.
+
+Verified by sampling 21 scroll positions plus deliberately brutal scroll patterns: zero
+blocks invisible, in both themes and at 375px.
 
 ## Deploying
 

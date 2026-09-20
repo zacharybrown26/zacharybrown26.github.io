@@ -6,3 +6,6 @@
 # Internal working documents — not part of the published site.
 COPY-DRAFT.md
 APPLICATION-REFLECTION.md
+
+# Derived copy for the Artifact preview build.
+artifact-page.html

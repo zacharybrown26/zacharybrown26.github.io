@@ -70,18 +70,27 @@ PowerPoint window, but `~/Downloads/IRDM_vF.pdf` is a proper 27-page slide expor
 what is published. It carries the five teammates' names on the cover and no emails or phone
 numbers, so it needed no redaction.
 
-**The Project Alpha link is still the older deck**, and that now matters. PowerPoint cannot
-be driven from this environment, so `AlphaPalmetto_Deck_vF_updated.pptx` could not be
-converted. Comparing the two decks slide by slide: 38 of 49 slides are identical, ten were
-revised, and one was removed. The revisions are real, so the old version should not ship.
+**The Project Alpha link is still the older deck**, and only you can change that. Two
+attempts failed:
 
-> **Before exporting the updated deck, fix slide 12.** In the old version it read
-> "III. Industry & Market Analysis". In the updated version the entire slide reads
-> **"Analysus"** — a misspelling, with the section number and title gone. "Analysis" is
-> spelled correctly on eleven other slides, so this is an editing accident on a section
-> divider, and it would be the first thing a reviewer noticed.
+1. **PowerPoint automation is blocked.** It accepts the export command over AppleScript and
+   reports success, then writes nothing — macOS automation consent silently denied, with
+   nobody present to approve the dialog. Tried five syntaxes and three destinations.
+2. **LibreOffice converts it, but destroys it.** It cannot render the deck's charts. On the
+   Entry Deal Structure slide it printed *"One or more chart types are unsupported in this
+   version of LibreOffice"* directly onto the page, over the top of overlapping labels, and
+   the purchase-price waterfall vanished. It also duplicated the slide 12 title. Verified by
+   rasterising pages and comparing against PowerPoint's own export, which is clean.
 
-Then: delete slide 2, the team contact page, and File › Save As › PDF.
+So the deck you export yourself is the only good one.
+
+**The typo is already fixed for you.** `~/Downloads/AlphaPalmetto_Deck_FIXED.pptx` is the
+updated deck with slide 12 corrected from **"Analysus"** back to "III. Industry & Market
+Analysis". Everything else is untouched. Open it, delete slide 2 (the team contact page),
+then File › Save As › PDF and send it over.
+
+What is published right now is PowerPoint's own export of the *older* deck with page 2
+stripped, 48 pages, charts intact, no contact data.
 
 ### Decisions already made
 
@@ -179,6 +188,21 @@ Verified by sampling 21 scroll positions plus deliberately brutal scroll pattern
 blocks invisible, in both themes and at 375px.
 
 ## Deploying
+
+**GitHub Pages is blocked on one thing only: you have no GitHub credentials on this
+machine.** No SSH key, no credential helper, no keychain entry. `gh` is now installed
+(v2.101.0 via Homebrew), so the whole sequence is:
+
+```bash
+gh auth login          # only you can do this — browser flow
+cd "/Users/zachbrown/Desktop/Recalc Website"
+gh repo create zacharybrown-site --public --source=. --push
+gh api -X POST repos/:owner/zacharybrown-site/pages -f source[branch]=main -f source[path]=/
+```
+
+In the meantime the site is published as a private Claude Artifact, which needed no GitHub
+account. Same files, same styling, reachable from your account.
+
 
 `COPY-DRAFT.md` and `APPLICATION-REFLECTION.md` are internal and already gitignored.
 

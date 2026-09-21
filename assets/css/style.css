@@ -3,37 +3,40 @@
    Institutional navy · single column · minimal
    ============================================================= */
 
-/* ---------- tokens ---------- */
+/* ---------- tokens ----------
+   Modelled on Audax Private Equity: one sans family throughout, a warm
+   cream ground rather than white, deep navy ink, and a second navy for
+   labels and links. Measured from their live site, not guessed. */
 :root {
-  --ink:        #0b1b2e;
-  --ink-soft:   #33465f;
-  --ink-mute:   #5a6b80; /* 5.28:1 on --ground, 4.99:1 on --ground-alt */
-  --ink-faint:  #a6b2c2; /* decorative only (aria-hidden section numerals) */
-  --ground:     #fbfbfc;
-  --ground-alt: #f2f5f8;
-  --rule:       #dce2ea;
-  --accent:     #1f4e79;
-  --accent-lit: #2f6ea6;
+  --ink:        #0f2639;  /* Audax display navy */
+  --ink-soft:   #2c4257;
+  --ink-mute:   #5b7086;
+  --ink-faint:  #b3bfc9;  /* decorative only (aria-hidden numerals) */
+  --ground:     #faf3ec;  /* Audax cream */
+  --ground-alt: #f3eade;
+  --rule:       #ddd2c4;
+  --accent:     #062852;  /* Audax label/link navy */
+  --accent-lit: #14447e;
 
-  --serif: "Newsreader", Georgia, "Times New Roman", serif;
-  --sans:  -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --display: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  --text:    "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
 
-  --wrap: 42rem;
-  --wrap-wide: 58rem;
-  --step: clamp(3.5rem, 8vw, 6.5rem);
+  --wrap: 44rem;
+  --wrap-wide: 60rem;
+  --step: clamp(3.5rem, 8vw, 7rem);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --ink:        #eaeef4;
-    --ink-soft:   #b6c2d2;
-    --ink-mute:   #8593a6; /* 5.88:1 on --ground, 5.40:1 on --ground-alt */
-    --ink-faint:  #3d556e;
-    --ground:     #0b1520;
-    --ground-alt: #101e2d;
-    --rule:       #24374d;
-    --accent:     #7fb0dd;
-    --accent-lit: #a3c9ec;
+    --ink:        #f1e9df;
+    --ink-soft:   #cbbfb2;
+    --ink-mute:   #9d9082;
+    --ink-faint:  #3b4a57;
+    --ground:     #0f2639;
+    --ground-alt: #16324a;
+    --rule:       #2b4459;
+    --accent:     #cbdcf0;
+    --accent-lit: #e6f0fb;
   }
 }
 
@@ -50,9 +53,10 @@ body {
   margin: 0;
   background: var(--ground);
   color: var(--ink-soft);
-  font-family: var(--sans);
-  font-size: 1.125rem;
-  line-height: 1.65;
+  font-family: var(--text);
+  font-size: 1.1875rem;
+  line-height: 1.6;
+  letter-spacing: -0.003em;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -124,7 +128,7 @@ a:hover { color: var(--accent-lit); }
   gap: 1rem;
 }
 .topbar__name {
-  font-family: var(--serif);
+  font-family: var(--display);
   font-size: 1.0625rem;
   color: var(--ink);
   text-decoration: none;
@@ -138,7 +142,8 @@ a:hover { color: var(--accent-lit); }
   text-transform: uppercase;
 }
 .topbar__nav a {
-  color: var(--ink-mute);
+  color: var(--accent);
+  font-weight: 600;
   text-decoration: none;
 }
 .topbar__nav a:hover { color: var(--accent); }
@@ -149,48 +154,53 @@ a:hover { color: var(--accent-lit); }
 
 /* ---------- type ---------- */
 .eyebrow {
-  font-size: .75rem;
-  letter-spacing: .16em;
+  font-size: .8125rem;
+  font-weight: 600;
+  letter-spacing: .08em;
   text-transform: uppercase;
-  color: var(--ink-mute);
-  margin: 0 0 1.5rem;
+  color: var(--accent);
+  margin: 0 0 1.75rem;
 }
 
 h1 {
-  font-family: var(--serif);
+  font-family: var(--display);
   font-weight: 400;
-  font-size: clamp(2.75rem, 9vw, 4.5rem);
-  line-height: 1.02;
+  font-size: clamp(3rem, 9.5vw, 5.5rem);
+  line-height: 1.0;
+  letter-spacing: -0.04em;
   color: var(--ink);
-  margin: 0 0 1.5rem;
+  margin: 0 0 1.75rem;
 }
 
 h2 {
-  font-family: var(--serif);
+  font-family: var(--display);
   font-weight: 400;
-  font-size: clamp(1.875rem, 4.5vw, 2.75rem);
-  line-height: 1.15;
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
   color: var(--ink);
   margin: 0 0 2rem;
   text-wrap: balance;
 }
 
 h3 {
-  font-family: var(--serif);
-  font-weight: 400;
+  font-family: var(--display);
+  font-weight: 500;
   font-size: clamp(1.375rem, 3vw, 1.75rem);
-  line-height: 1.2;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
   color: var(--ink);
   margin: 0 0 .5rem;
 }
 
 .lede {
-  font-family: var(--serif);
-  font-size: clamp(1.1875rem, 2.4vw, 1.5rem);
+  font-family: var(--display);
+  font-size: clamp(1.1875rem, 2.2vw, 1.4375rem);
   line-height: 1.5;
-  font-weight: 300;
+  letter-spacing: -0.015em;
+  font-weight: 400;
   color: var(--ink);
-  margin: 0 0 2.25rem;
+  margin: 0 0 2.5rem;
   text-wrap: pretty;
 }
 .lede--tight { margin-bottom: 1.5rem; }
@@ -198,17 +208,20 @@ h3 {
 .prose p { margin: 0 0 1.35rem; }
 .prose p:last-child { margin-bottom: 0; }
 .prose--intro p {
-  font-size: 1.125rem;
+  font-size: 1.3125rem;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
 }
 
 /* The closing line of each interest block. A hairline above it rather
    than a colored bar beside it: repeated four times, a 2px accent rule
    starts to read as a template. */
 .tie {
-  font-family: var(--serif);
-  font-size: 1.1875rem;
-  line-height: 1.55;
-  font-style: italic;
+  font-family: var(--display);
+  font-size: 1.3125rem;
+  line-height: 1.45;
+  font-weight: 500;
+  letter-spacing: -0.02em;
   color: var(--ink);
   margin-top: 2rem !important;
   padding-top: 1.5rem;
@@ -216,10 +229,11 @@ h3 {
 }
 
 .closer {
-  font-family: var(--serif);
+  font-family: var(--display);
   font-size: clamp(1.1875rem, 2.2vw, 1.375rem);
-  line-height: 1.55;
-  font-weight: 300;
+  line-height: 1.4;
+  font-weight: 400;
+  letter-spacing: -0.02em;
   color: var(--ink);
   margin: var(--step) 0 0;
   padding-top: 2.5rem;
@@ -239,7 +253,7 @@ h3 {
   align-items: start;
 }
 @media (min-width: 48rem) {
-  .hero__grid { grid-template-columns: 1.55fr 1fr; }
+  .hero__grid { grid-template-columns: 1.72fr 1fr; }
 }
 
 /* Photo sits below the copy on narrow screens so the name leads,
@@ -304,7 +318,7 @@ h3 {
   border-top: 0;
 }
 .item__num {
-  font-family: var(--serif);
+  font-family: var(--display);
   font-size: 2.5rem;
   line-height: 1;
   color: var(--ink-faint);
@@ -316,6 +330,7 @@ h3 {
 /* The one-line lesson under each interest heading. Carries the
    accumulation: four blocks, four different things learned. */
 .item__lesson {
+  font-weight: 600;
   font-size: .75rem;
   letter-spacing: .14em;
   text-transform: uppercase;
@@ -331,6 +346,7 @@ h3 {
 }
 .card:first-of-type { padding-top: 0; margin-top: 0; border-top: 0; }
 .card__kicker {
+  font-weight: 600;
   font-size: .6875rem;
   letter-spacing: .14em;
   text-transform: uppercase;
@@ -370,7 +386,9 @@ h3 {
   margin-bottom: .3rem;
 }
 .stats dd {
-  font-family: var(--serif);
+  font-family: var(--display);
+  font-weight: 400;
+  letter-spacing: -0.03em;
   font-size: 1.625rem;
   line-height: 1;
   color: var(--ink);
@@ -388,11 +406,12 @@ h3 {
 
 /* ---------- experience row ---------- */
 .row-heading {
-  font-family: var(--sans);
+  font-weight: 600;
+  font-family: var(--text);
   font-size: .75rem;
   letter-spacing: .16em;
   text-transform: uppercase;
-  color: var(--ink-mute);
+  color: var(--accent);
   margin: var(--step) 0 1.5rem;
 }
 
@@ -421,7 +440,9 @@ h3 {
   .logos__role { text-align: right; flex-shrink: 0; max-width: 60%; }
 }
 .logos__name {
-  font-family: var(--serif);
+  font-family: var(--display);
+  font-weight: 500;
+  letter-spacing: -0.02em;
   font-size: 1.1875rem;
   color: var(--ink);
   line-height: 1.3;
@@ -448,7 +469,7 @@ h3 {
 /* ---------- contact ---------- */
 .contact { text-align: left; }
 .contact__mail {
-  font-family: var(--serif);
+  font-family: var(--display);
   font-size: clamp(1.375rem, 4vw, 2rem);
   margin: 0 0 1.25rem;
   word-break: break-word;
@@ -512,15 +533,16 @@ h3 {
 .numbered > li::before {
   content: "0" counter(why);
   display: block;
-  font-family: var(--serif);
+  font-family: var(--display);
   font-size: 1.125rem;
   color: var(--ink-mute);
   margin-bottom: .3rem;
   font-variant-numeric: tabular-nums;
 }
 .numbered h4 {
-  font-family: var(--serif);
-  font-weight: 400;
+  font-family: var(--display);
+  font-weight: 500;
+  letter-spacing: -0.02em;
   font-size: 1.25rem;
   line-height: 1.25;
   color: var(--ink);
